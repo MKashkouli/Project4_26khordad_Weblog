@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block title %} DELETE POST {% endblock title %}
+
+{% block content %}
+
+    <div class="card shadow my-3 p-5">
+        <h1>ARE YOU SURE ?</h1>
+        <p>are u sure u wanna delete <b> "{{ post.title }} "</b> ???</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input class="btn btn-danger" type="submit" value="Yes , Delete">
+        </form>
+        <a href="{% url 'postlist'%}" class="btn btn-sm btn-info"> NO</a>
+    </div>
+{% endblock content %}
